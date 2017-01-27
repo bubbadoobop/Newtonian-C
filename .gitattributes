@@ -1,3 +1,2 @@
-Documentation/* linguist-documentation
-Documentation/* linguist-vendored
+Documentation/'Latex source code'* linguist-documentation
 Documentation/Latex source code/main.tex linguist-documentation=true

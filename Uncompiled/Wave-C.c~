@@ -1,7 +1,0 @@
-# include <stdio.h>
-/* A synopsis about this program.*/
-
-/*int,float*/ main(){
-
-  return 0;
-}

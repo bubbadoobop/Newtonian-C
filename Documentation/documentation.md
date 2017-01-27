@@ -68,7 +68,7 @@ Please pick an option from below
 
 It will then output all the values calculated by the program.
 
-## IMORTANT
+## IMPORTANT
 ____
 
 When using options 1 or 3, it will tell you to enter the values in the exact order it says. Falure to do so will result in misleading outputs, that are wrong in the context of whatever calculations that you may be making.

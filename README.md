@@ -5,6 +5,9 @@ it's simple usage, and small size. With Newtonian-C, you can work with the basic
 * Kinematic systems
 * Newtonian gravitational systems
 * Waves
+* Some geometric optics
+* Very essential quantum physics
+* Ohm's law
 
 Now, you can probably take this into college, but, I cannot guarantee that it
 will get you far. 

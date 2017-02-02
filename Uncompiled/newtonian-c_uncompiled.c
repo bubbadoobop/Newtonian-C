@@ -139,7 +139,7 @@ float quantum(){
     scanf("%f", &m);
     lambda = m * 1 / p;
     f = 1 / lambda;
-    E = ((2 * pi) / lambda);
+    E = ((1 / (2 * pi)) / lambda);
     Etheta = 1 * ((2 * pi) * f);
     printf("Wavelength: λ = %f\nFrequency: f = %f\nEnergy: E = %f\nEnergy with angular frequency: Eθ = %f\n", lambda, f, E, Etheta);
     break;

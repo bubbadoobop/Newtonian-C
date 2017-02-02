@@ -8,10 +8,21 @@ university student may find this program underwhelming.*/
 float m, t, x, f, v, h, a, w, po, p, ke, pe, a; /*Basic Kinematic variables*/
 float f, A, lambda, omega, T, v; /* Wave variables */;
 float Fg, r, M, m1, m2; /* Gravitational variables, v is already in the Kinematic variables.*/
+float mf, hi, ho, fp, rf, d0, di; /*Optics variables*/
+float theta; /*Angle*/
+float E, Etheta, cs; /*Quantum variables*/
+float I, V, R; /*Electronic variables*/
 float g = 9.8; /* Gravitational Acceleration*/
 float Gc = 6.67408E-11; /* Newton's Gravitational Constant. */
 float pi = 3.141592; /*Pi, just pi.*/;
-int choice; 
+float c = 299792458; /*The speed of light in a vacuum*/
+float hc = 6.63E-34; /*Plank's constant*/
+float hr = 1.05E-16; /*Plank's reduced constant*/
+float Me = 9.11E-31; /*Electron rest mass*/
+int choice;
+int choice2;
+int choice3;
+int choice4;
 /* Functions for each of the physical systems.  */
 float kinematic(); 
 float kinematic(){
@@ -65,10 +76,117 @@ float gravity(){
 
 }
 
-int about();
-int about(){
+float optic(){
+  printf("Optical system\n");
+  printf("--------------\n");
+  printf("1) Mirror to image distance\n");
+  printf("2) Refraction\n");
+  printf("3) Focal length");
+  printf("\n--> ");
+  scanf("%d",&choice2);
+  switch (choice2){
+  case 1:
+    printf("Please input the distance from the mirror and the distance from the image.\n");
+    scanf("%f",&d0);
+    scanf("%f",&di);
+    mf = (1 / d0) + (1 / di);
+    printf("Distance of mirror to the image: 1/f = %f\n",mf);
+    break;
+
+  case 2:
+    printf("Please input the speed of light in your medium...\n");
+    scanf("%f",&v);
+    rf = c / v;
+    printf("Refraction index: rf = %f\n",rf);
+    break;
+
+  case 3:
+      printf("Concave or convex?\n");
+      printf("------------------\n");
+      printf("1) Concave\n");
+      printf("2) Convex\n> ");
+      scanf("%d",&choice3);
+      switch (choice3){
+      case 1:
+	printf("Input radius\n");
+	scanf("%f", &r);
+	fp = .5 * r;
+	printf("Focal length: fl = %f\n",fp);
+	break;
+      case 2:
+	printf("Input radius\n");
+	scanf("%f", &r);
+	fp = -(.5 * r);
+	printf("Focal length: fl = %f\n",fp);
+	break;
+	
+      }
+      
+    }
+    
+  }
+
+
+float quantum(){
+  printf("Quantum system (in ħ = c = 1 units)\n");
+  printf("--------------\n");
+  printf("1) Action of a particle\n2) Compton scattering\n--> ");
+  scanf("%d",&choice2);
+  switch (choice2) {
+  case 1:
+    printf("Input momentum and mass in that exact order (in ħ = c = 1 units)\n");
+    scanf("%f",&p);
+    scanf("%f", &m);
+    lambda = m * 1 / p;
+    f = 1 / lambda;
+    E = ((2 * pi) / lambda);
+    Etheta = 1 * ((2 * pi) * f);
+    printf("Wavelength: λ = %f\nFrequency: f = %f\nEnergy: E = %f\nEnergy with angular frequency: Eθ = %f\n", lambda, f, E, Etheta);
+    break;
+  case 2:
+    printf("Please enter your scattering angle and mass in that order (in ħ = c = 1 units).\n");
+    scanf("%f",&theta);
+    scanf("%f",&m);
+    cs = ( 1 / m ) * (1 - cos( theta ) );
+    printf("λ' -  λ = %f\n\n",cs);
+    
+}
+}
+float electricity(){
+  printf("What do you wish to find out?\n");
+  printf("-----------------------------\n");
+  printf("1) Current\n2) Resistance\n3) Voltage\n\n--> ");
+  scanf("%d",&choice2);
+  switch (choice2) {
+  case 1:
+    printf("Please input voltage and resistance in that exact order.\n");
+    scanf("%f", &V);
+    scanf("%f", &R);
+    I = V / R;
+    printf("Current: I = %f\nVoltage: V = %f\nResistance: R = %f\n", I, V, R);
+    break;
+  case 2:
+    printf("Please enter current and voltage in that exact order.\n");
+    scanf("%f", &V);
+    scanf("%f", &I);
+    R = I / V;
+    printf("Current: I = %f\nVoltage: V = %f\nResistance: R = %f\n", I, V, R);
+    break;
+  case 3:
+    printf("Enter resistance and current in that exact order.\n");
+    scanf("%f", &R);
+    scanf("%f", &I);
+    V = I * R;
+    printf("Current: I = %f\nVoltage: V = %f\nResistance: R = %f\n", I, V, R);
+  }
+  
+}
+
+
+float about(){
   printf("*TAKEN FROM THE README*\n");
-  printf("Newtonian-C is a C program that can make high-school physics a breeze. With its simple usage, and small size. With Newtonian-C, you can work with the basics of... \n\n -Kinematic Systems\n -Newtonian gravitational systems\n -Waves\n\nNow, you can probably take this into college, but, I cannot guarantee that it will get you far.\n");
+  printf("Newtonian-C is a C program that can make high-school physics a breeze. With its simple usage, and small size. \nWith Newtonian-C, you can work with the basics of... \n\n -Kinematic Systems\n -Newtonian gravitational systems\n -Waves\n\nNow, you can probably take this into college, but, I cannot guarantee that it will get you far.\n\n");
+  printf("About ħ = c = 1 units\nħ = c = 1 units are the natural units used by particle physicists in their study of the indescribably tiny. So tiny,\ninfact, that the units they use are incredbly minute. To combat this, physicists divised a derivable system of units for the high energy conditions of the subatomic world (c, the speed of light), and, for the incredibly small action \n(ħ)\n\n");
 
   printf("A QUICK NOTE ON USAGE\n\nIf you're using scientific notation, then what you can do is use E, or input 'xEy', where x is a decimal number, and y is the power 10 (E) is raised to.\n\n");
 }
@@ -83,7 +201,10 @@ float main(){
   printf("1) Kinematic system\n");
   printf("2) Wave system\n");
   printf("3) Gravitational System\n");
-  printf("4) About\n\n");
+  printf("4) Geometric Optical System\n");
+  printf("5) Quantum System\n");
+  printf("6) Electromagenetic System\n");
+  printf("7) About\n\n");
   printf("---> ");
   scanf("%d", &choice);
   switch (choice) {
@@ -97,7 +218,17 @@ float main(){
     gravity();
     break;
   case 4:
+    optic();
+    break;
+  case 5:
+    quantum();
+    break;
+  case 6:
+    electricity();
+    break;
+  case 7:
     about();
     break;
   }
 }
+

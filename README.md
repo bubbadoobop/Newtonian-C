@@ -15,7 +15,8 @@ will get you far.
 
 
 This program is not intended for academic dishonesty in any way, shape, or form. Thencefourth, any actions that may be perceived dishonest are not my fault, and the faculty of the school/university should deal with the student(s) based upon their actions individually. 
-# Using Newtonian-C
+### Using Newtonian-C
+___
 *Taken from Documentation*
 
 When using Newtonian-C, the first thing you will see is a menu, which, is pretty self explanatory.
@@ -85,7 +86,7 @@ Please pick an option from below
 
 It will then output all the values calculated by the program.
 
-## IMPORTANT
+### IMPORTANT
 ____
 
 When using options 1 or 3, it will tell you to enter the values in the exact order it says. Falure to do so will result in misleading outputs, that are wrong in the context of whatever calculations that you may be making.

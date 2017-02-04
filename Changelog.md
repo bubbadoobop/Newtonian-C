@@ -1,7 +1,12 @@
 # Changelog
 
+### Febuary 3, 2017
+____
+* Recorrect *h* in *ħ = c =* 1 from 1/2π to 2/π.
+
+
 ### Febuary 2, 2017
-___
+____
 * Correctd *h* in *ħ = c =* 1 from 2π to 1/2π .
 
 
